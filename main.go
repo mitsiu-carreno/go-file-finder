@@ -68,8 +68,11 @@ func main(){
 	// Retreive all documents from mongo
 	err = col.Find(bson.M{}).All(&documents) 
 
-	for _, entry := range documents{
-		//var entryNum = i+1
+	progressBar := pb.StartNew(len(documents)) 
+
+	for i, entry := range documents{
+		var entryNum = i+1
+		progressBar.Increment()
 
 		// Check if file exists
 		_, err := os.Stat(filePath + entry.ARCHIVO)
@@ -80,4 +83,5 @@ func main(){
 		Check(err)
 	}
 
+	progressBar.FinishPrint("Check missiongs.log")
 }
