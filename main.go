@@ -8,6 +8,7 @@ import(
 	"flag"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+	"gopkg.in/cheggaaa/pb.v1"
 	models "github.com/mitsiu-carreno/go-file-finder/declarations"
 )
 
