@@ -21,7 +21,7 @@ var (
 func NewLog(logpath string){
 	file, err := os.Create(logpath)
 	Check(err)
-	Log = log.New(file, "", log.LstdFlags)
+	Log = log.New(file, "", 0)
 }
 
 // Check function 
