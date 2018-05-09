@@ -21,6 +21,8 @@ var (
 func NewLog(logpath string){
 	file, err := os.Create(logpath)
 	Check(err)
+
+	// No default text before each line in loger
 	Log = log.New(file, "", 0)
 }
 
@@ -83,5 +85,7 @@ func main(){
 		Check(err)
 	}
 
-	progressBar.FinishPrint("Check missiongs.log")
+	progressBar.FinishPrint("Check: missings.log")
 }
+
+// convmv --nfc -f utf8 -t utf8 --notest
