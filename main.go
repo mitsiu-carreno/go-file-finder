@@ -70,8 +70,8 @@ func main(){
 
 	progressBar := pb.StartNew(len(documents)) 
 
-	for i, entry := range documents{
-		var entryNum = i+1
+	for _, entry := range documents{
+		//var entryNum = i+1
 		progressBar.Increment()
 
 		// Check if file exists
